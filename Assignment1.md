@@ -1,3 +1,4 @@
+```python
 def pythagoreanTheorem(length_a, length_b):  # define pythagoreanTheorem function with two variables of length_a and length_b
     length_c =(length_a **2 + length_b ** 2) ** (1/2) # pythagoreanTheorem formula, calculate hypotenuse
     return length_c  #return the length_c

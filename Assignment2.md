@@ -4,7 +4,7 @@
 * master
 (base) cmp3896:handson ma3367$ git checkout master
 Already on 'master'
-
+(base) cmp3896:handson ma3367$ git checkout math
 (base) cmp3896:handson ma3367$ git log --decorate
 commit 9ad3766598b638931af8c1bb851b6538e46355f9 (HEAD -> master)
 Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
@@ -43,35 +43,22 @@ Date:   Thu Sep 3 11:35:34 2020 -0700
   Date:   Thu Sep 3 11:35:34 2020 -0700
   
       creating A.py to do assignments
+###It shows all the latest commits to the branches.      
 ## 3.Use git diff BRANCH_NAME to view the differences from a branch and the current branch. Summarize the difference from master to the other branch.
 ```
 (base) cmp3896:handson ma3367$ git branch math
 (base) cmp3896:handson ma3367$ git diff math
-(base) cmp3896:handson ma3367$ log --graph --all
-log: unrecognized option `--graph'
-usage:
-    log <command>
 
-global options:
-    -?, --help
-    -q, --quiet
-    -v, --verbose
+### In the master branch and math branch, there are both two files. But in the master branch, there is only one line code. 
+When we use git diff to view the other branch, it will show the different line code from the master branch, such as the calculate operator code. 
 
-commands:
-    collect         gather system logs into a log archive
-    config          view/change logging system settings
-    erase           delete system logging data
-    show            view/search system logs
-    stream          watch live system logs
-    stats           show system logging statistics
-
-further help:
-    log help <command>
-    log help predicates
 ## 4.Write a command sequence to merge the non-master branch into master
 ```
 (base) cmp3896:handson ma3367$ git checkout master
 (base) cmp3896:handson ma3367$ git merge math
+CONFLICT (content): Merge conflict in B.py
+Automatic merge failed; fix conflicts and then commit the result.
+   
 
 ## 5.Write a command (or sequence) to (i) create a new branch called math (from the master) and (ii) change to this branch
 ```
@@ -163,7 +150,8 @@ Date:   Thu Sep 3 11:35:34 2020 -0700
 
 ## 11.Now repeat item 9, but proceed with the manual merge (Editing B.py). All implemented methods are needed. Explain your procedure
 ```
+###To avoid conflict I had to open the B.py in editor and remove two lines and then use add command and merge command in git. 
 
 ## 12.Write a command (or set of commands) to proceed with the merge and make master branch up-to-date
 ```
-(base) cmp3896:handson ma3367$ git commit -av
+(base) cmp3896:handson ma3367$ git commit B.py -m "merged conflict solved"

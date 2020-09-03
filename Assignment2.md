@@ -166,3 +166,4 @@ Date:   Thu Sep 3 11:35:34 2020 -0700
 
 ## 12.Write a command (or set of commands) to proceed with the merge and make master branch up-to-date
 ```
+(base) cmp3896:handson ma3367$ git commit -av

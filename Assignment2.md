@@ -46,7 +46,6 @@ Date:   Thu Sep 3 11:35:34 2020 -0700
 ###It shows all the latest commits to the branches.      
 ## 3.Use git diff BRANCH_NAME to view the differences from a branch and the current branch. Summarize the difference from master to the other branch.
 ```
-(base) cmp3896:handson ma3367$ git branch math
 (base) cmp3896:handson ma3367$ git diff math
 
 ### In the master branch and math branch, there are both two files. But in the master branch, there is only one line code. 
@@ -61,7 +60,7 @@ When we use git diff to view the other branch, it will show the different line c
 ## 5.Write a command (or sequence) to (i) create a new branch called math (from the master) and (ii) change to this branch
 ```
 (base) cmp3896:handson ma3367$ git branch math
-(base) cmp3896:handson ma3367$ git diff math
+(base) cmp3896:handson ma3367$ git checkout math
 
 ## 6.Edit B.py adding the following source code below the content you have there
 ```
@@ -75,25 +74,6 @@ print 2+2
 ## 7.Write a command (or sequence) to commit your changes
 ```
 (base) cmp3896:handson ma3367$ git commit B.py -m "adding source code"
-(base) cmp3896:handson ma3367$ git log
-commit 9ad3766598b638931af8c1bb851b6538e46355f9 (HEAD -> master)
-Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
-Date:   Thu Sep 3 12:00:04 2020 -0700
-
-    adding source code
-
-commit b4ddf3b1dd5258adaf4ae4cb9f1ed57e43603ece
-Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
-Date:   Thu Sep 3 11:54:33 2020 -0700
-
-    creating B.py to do assignments
-
-commit 8b8ed6ece6b712f917670afb2422619d07be979b
-Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
-Date:   Thu Sep 3 11:35:34 2020 -0700
-
-    creating A.py to do assignments
-
 (base) cmp3896:handson ma3367$ git show
 commit 9ad3766598b638931af8c1bb851b6538e46355f9 (HEAD -> master)
 Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
@@ -112,7 +92,7 @@ index c63f94c..e6a2ded 100644
 +
 ## 8.Change back to the master branch and change B.py adding the following source code (commit your change to master):
 ```
-(base) cmp3896:handson ma3367$ git diff master
+(base) cmp3896:handson ma3367$ git checkout master
 (base) cmp3896:handson ma3367$ pico B.py
 (base) cmp3896:handson ma3367$ cat B.py
 # Another file that will receive a line of code... at least.
@@ -139,3 +119,5 @@ Automatic merge failed; fix conflicts and then commit the result.
 ## 12.Write a command (or set of commands) to proceed with the merge and make master branch up-to-date
 ```
 (base) cmp3896:handson ma3367$ git commit B.py -m "merged conflict solved"
+(base) cmp3896:handson ma3367$ merge math -m "manual merge"
+(base) cmp3896:handson ma3367$ checkout

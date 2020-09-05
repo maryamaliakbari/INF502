@@ -56,13 +56,37 @@ Date:   Wed Aug 14 23:08:47 2019 -0700
 ```
 (base) cmp3896:handson ma3367$ git diff math
 diff --git a/A.py b/A.py
+index 0afa98c..dc1e9bd 100644
+--- a/A.py
++++ b/A.py
+@@ -1,11 +1,3 @@
+ #this is just an example, do not freak out
+ def calculate_this(operator, num1, num2):
+-   if operator == 'sum':
+-      print num1 + num2
+-      print 'That was easy buddy'
+-   else:
+-      if operator == 'subtraction':
+-         print num1 - num2
+-         print 'I could handle that...'
+-      else:
+-         print 'my knowledge is limited'
++   print 'my knowledge is limited'     
+diff --git a/B.py b/B.py
+index e69de29..c63f94c 100644
+--- a/B.py
++++ b/B.py
+@@ -0,0 +1 @@
++# Another file that will receive a line of code... at least.
+ (base) cmp3896:handson ma3367$ git diff master
+diff --git a/A.py b/A.py
 index dc1e9bd..0afa98c 100644
 --- a/A.py
 +++ b/A.py
 @@ -1,3 +1,11 @@
  #this is just an example, do not freak out
  def calculate_this(operator, num1, num2):
--   print 'my knowledge is limited'
+-   print 'my knowledge is limited'     
 +   if operator == 'sum':
 +      print num1 + num2
 +      print 'That was easy buddy'
@@ -78,8 +102,7 @@ index c63f94c..e69de29 100644
 +++ b/B.py
 @@ -1 +0,0 @@
 -# Another file that will receive a line of code... at least.
-
-### In the master branch and math branch, there are both two files. But in the master branch, there is only one line code. 
+###In the master branch, there is only one line code. 
 When we use git diff to view the other branch, it will show the different line code from the master branch, such as the calculate operator code. 
 
 ## 4.Write a command sequence to merge the non-master branch into master
@@ -111,22 +134,7 @@ print 2+2
 ## 7.Write a command (or sequence) to commit your changes
 ```
 (base) cmp3896:handson ma3367$ git commit B.py -m "adding source code"
-(base) cmp3896:handson ma3367$ git show
-commit 9ad3766598b638931af8c1bb851b6538e46355f9 (HEAD -> master)
-Author: Maryam Aliakbari <ma3367@cmp3896.computers.nau.edu>
-Date:   Thu Sep 3 12:00:04 2020 -0700
 
-    adding source code
-
-diff --git a/B.py b/B.py
-index c63f94c..e6a2ded 100644
---- a/B.py
-+++ b/B.py
-@@ -1 +1,4 @@
- # Another file that will receive a line of code... at least.
-+print 'I know math, look:'
-+print 2+2
-+
 ## 8.Change back to the master branch and change B.py adding the following source code (commit your change to master):
 ```
 (base) cmp3896:handson ma3367$ git checkout master
@@ -152,11 +160,13 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 ## 11.Now repeat item 9, but proceed with the manual merge (Editing B.py). All implemented methods are needed. Explain your procedure
 ```
-###To avoid conflict I had to open the B.py in editor and remove two lines and then use add command and merge command in git. 
+###To avoid conflict first i needed to abort the merge then I had to open the B.py in editor and remove two lines and then use add command and merge command in git. 
+or we can Abort the merge and checkout to the math branch, Copy the two lines and switche to master branch. Edit B.py and paste the two lines there. 
 
 ## 12.Write a command (or set of commands) to proceed with the merge and make master branch up-to-date
 ```
-(base) cmp3896:handson ma3367$ git commit B.py -m "merged conflict solved"
+(base) cmp3896:handson ma3367$ git add B.py
+(base) cmp3896:handson ma3367$ git commit -m "delete two lines"
 (base) cmp3896:handson ma3367$ merge math
 Updating f197c7f..e6f90b4
 Fast-forward
@@ -164,11 +174,21 @@ Fast-forward
  B.py |   5 +++++
  2 files changed, 5 insertions(+)
  create mode 100644 .swp
-(base) cmp3896:handson ma3367$ checkout
+
 
 
 ## part 2
+what i did:
+1. pressed "Fork", In the repository "igorsteinmacher / INF502-Fall2020".
+2. In my repository" maryamaliakbari/INF502-Fall2020", copied the link.
+3. opened the terminal and typed "git clone [copied link]"
+4. entered the workspace.
+5. set up a file named "Aliakbari_Maryam.md".
+6. git add Aliakbari_Maryam.md.
+7. git commit -m "add Aliakbari_Maryam.md""
+8. git remote add upstream https://github.com/igorsteinmacher/INF502-Fall2020.git.
+9. git push.
+9. In my own repository clicked the "pull request".
 
-I checked some information to know how to use the pull request. But I also encountered some difficulties, 
-some of the instructions are not on the ppt, I have been on the GitHub for a long time to find the corresponding instructions. 
-In general, if I can use GitHub skillfully, I believe it will be very helpful for my future programming.
+I have been on the GitHub for a long time to find the corresponding instructions and encountered some difficulties. Since i started to do this part on Tuesday right after the class, you had not created students folder yet and i was alittle confused about how and where create my file.
+In general, if I can use GitHub skillfully(it needs lots of practice), I believe it will be very helpful for my future programming.

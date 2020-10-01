@@ -34,25 +34,7 @@ outputs:
 
 
 
-import statistics
-def grade_calc(grades_in, to_drop):
-    grades_in.sort() #sort grades in list in ascending order
-    del grades_in[:to_drop]  #delete first to to_drop elements of the grades in list
-    average = statistics.mean(grades_in) # take average of the list
-    if average >= 90: 
-        new_grade = "A"
-    elif average >= 80: 
-        new_grade = "B"    
-    elif average >= 70: 
-        new_grade = "C"
-    elif average >= 60: 
-        new_grade = "D"
-    else:
-        new_grade = "F"
-    return new_grade  #return new letter grade
-grade_calc([65, 85, 90, 100], 2)    
-grade_calc([40, 30, 60, 75, 83, 90, 20], 1)
-grade_calc([72, 98, 10, 46, 100, 54, 92, 0], 3)
+N
 
 outputs:
 'A'
@@ -81,3 +63,5 @@ outputs:
 [[4, 8, 14, 24], [3, 11, 17, 39]]
 [[4, 12, 44, 82], [1, 5, 19, 37, 59, 93]]
     
+
+```
